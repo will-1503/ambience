@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">ambience</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">AmbienceControll</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Painel</string>
+    <string name="title_notifications">Avisos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_cad_usuario">cadastro</string>
+    <string name="textview">Usuario</string>
+    <string name="AmbienceControll">Ambience</string>
 </resources>

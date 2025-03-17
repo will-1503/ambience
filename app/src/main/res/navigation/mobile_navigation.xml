@@ -22,4 +22,9 @@
         android:name="willian.com.br.ambience.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_cad_usuario"
+        android:name="willian.com.br.ambience.ui.usuario.CadUsuarioFragment"
+        android:label="fragment_cad_usuario"
+        tools:layout="@layout/fragment_cad_usuario" />
 </navigation>
