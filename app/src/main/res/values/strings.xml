@@ -7,5 +7,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_cad_usuario">cadastro</string>
     <string name="textview">Usuario</string>
-    <string name="AmbienceControll">Ambience</string>
+    <string name="AmbienceControll">nome</string>
+    <string name="textviewNome">Usuário</string>
 </resources>
