@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "willian.com.br.ambience"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "willian.com.br.ambience"
