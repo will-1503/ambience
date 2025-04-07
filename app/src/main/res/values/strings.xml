@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AmbienceControll</string>
+    <string name="app_name">Project</string>
     <string name="title_home">Inicio</string>
     <string name="title_dashboard">Painel</string>
     <string name="title_notifications">Avisos</string>
@@ -12,4 +12,5 @@
     <string name="textviewEmail">Email</string>
     <string name="textviewIdade">Idade</string>
     <string name="textviewSenha">Senha</string>
+    <string name="title_con_usuario">Consulta</string>
 </resources>
