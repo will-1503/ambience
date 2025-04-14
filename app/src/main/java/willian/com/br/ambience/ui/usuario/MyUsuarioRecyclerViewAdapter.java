@@ -3,24 +3,23 @@ package willian.com.br.ambience.ui.usuario;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import willian.com.br.ambience.ui.usuario.placeholder.PlaceholderContent.PlaceholderItem;
 import willian.com.br.ambience.databinding.FragmentConUsuarioBinding;
+import willian.com.br.ambience.model.Usuario;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
+ * {@link RecyclerView.Adapter} that can display a {@link Usuario}.
  * TODO: Replace the implementation with code for your data type.
  */
 public class MyUsuarioRecyclerViewAdapter extends RecyclerView.Adapter<MyUsuarioRecyclerViewAdapter.ViewHolder> {
 
-    private final List<PlaceholderItem> mValues;
+    private final List<Usuario> mValues;
 
-    public MyUsuarioRecyclerViewAdapter(List<PlaceholderItem> items) {
+    public MyUsuarioRecyclerViewAdapter(List<Usuario> items) {
         mValues = items;
     }
 
@@ -34,8 +33,8 @@ public class MyUsuarioRecyclerViewAdapter extends RecyclerView.Adapter<MyUsuario
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mIdView.setText(mValues.get(position).getNome());
+        holder.mContentView.setText(mValues.get(position).getProjeto());
     }
 
     @Override
@@ -46,7 +45,7 @@ public class MyUsuarioRecyclerViewAdapter extends RecyclerView.Adapter<MyUsuario
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView mIdView;
         public final TextView mContentView;
-        public PlaceholderItem mItem;
+        public Usuario mItem;
 
         public ViewHolder(FragmentConUsuarioBinding binding) {
             super(binding.getRoot());
