@@ -12,24 +12,27 @@ public class Usuario {
     //atributos
     private String email;
     private String nome;
-    private int idade;
+    private int protocolo;
     private String senha;
+    private String projeto;
 
 
     //CONSTRUTOR - Inicializa os atributos para gerar Objeto Json
     public Usuario () throws Exception {
         this.setNome("");
         this.setEmail("");
-        this.setIdade(0);
+        this.setProtocolo(0);
         this.setSenha("");
+        this.setProjeto("");
     }
     //CONSTRUTOR - inicializa atributos de um arquivo JSon
     public Usuario (JSONObject jp) {
         try {
             this.setEmail(jp.getString("email"));
             this.setNome(jp.getString("nome"));
-            this.setIdade(jp.getInt("idade"));
+            this.setProtocolo(jp.getInt("protocolo"));
             this.setSenha(jp.getString("senha"));
+            this.setProjeto(jp.getString("projeto"));
         } catch (Exception e) {
             Log.e("Usuario", Objects.requireNonNull(e.getMessage()));
         }
@@ -41,16 +44,22 @@ public class Usuario {
         try {
             json.put("email", this.email);
             json.put("nome", this.nome);
-            json.put("idade", this.idade);
+            json.put("protocolo", this.protocolo);
             json.put("senha", this.senha);
-
+            json.put("projeto", this.projeto);
         } catch (JSONException e) {
             Log.e("Usuario", Objects.requireNonNull(e.getMessage()));
         }
         return json;
     }
 
+    public String getProjeto() {
+        return projeto;
+    }
 
+    public void setProjeto(String projeto) {
+        this.projeto = projeto;
+    }
 
     public String getEmail() {
         return email;
@@ -68,12 +77,12 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+    public int getProtocolo() {
+        return protocolo;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setProtocolo(int protocolo) {
+        this.protocolo = protocolo;
     }
 
     public String getSenha() {

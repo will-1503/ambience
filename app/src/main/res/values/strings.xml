@@ -13,4 +13,11 @@
     <string name="textviewIdade">Idade</string>
     <string name="textviewSenha">Senha</string>
     <string name="title_con_usuario">Consulta</string>
+    <string name="titulo_projetos">TSelecione o Projeto</string>
+    <string name="textviewprotocolo">Protocolo</string>
+    <string-array name="projetos">
+        <item>Padrao de entrada</item>
+        <item>Subestação</item>
+        <item>Solar</item>
+    </string-array>
 </resources>

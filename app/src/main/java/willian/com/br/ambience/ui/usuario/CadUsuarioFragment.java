@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -44,8 +45,9 @@ public class CadUsuarioFragment extends Fragment implements View.OnClickListener
     private View view;
     private EditText etNome;
     private EditText etEmail;
-    private EditText etIdade;
+    private EditText etProtocolo;
     private EditText etSenha;
+    private Spinner spProjeto;
     private Button btSalvar;
     //volley
     private RequestQueue requestQueue;
@@ -91,9 +93,10 @@ public class CadUsuarioFragment extends Fragment implements View.OnClickListener
         //Binding
         this.etNome = view.findViewById(R.id.etNome);
         this.etEmail = view.findViewById(R.id.etEmail);
-        this.etIdade = view.findViewById(R.id.etIdade);
+        this.etProtocolo = view.findViewById(R.id.etProtocolo);
         this.etSenha = view.findViewById((R.id.etSenha));
         this.btSalvar = view.findViewById(R.id.btSalvar);
+        this.spProjeto = view.findViewById(R.id.spProjeto);
         //definindo o listener do botão
         this.btSalvar.setOnClickListener(this);
         //instanciando a fila de requests - caso o objeto seja o view
@@ -113,9 +116,10 @@ public class CadUsuarioFragment extends Fragment implements View.OnClickListener
                 //pegar dados da tela e por no objeto
                 usuario.setNome(this.etNome.getText().toString());
                 usuario.setEmail(this.etEmail.getText().toString());
-                int idade = Integer.parseInt(this.etIdade.getText().toString());
-                usuario.setIdade(idade);
+                int protocolo = Integer.parseInt(this.etProtocolo.getText().toString());
+                usuario.setProtocolo(protocolo);
                 usuario.setSenha(this.etSenha.getText().toString());
+                usuario.setProjeto(this.spProjeto.getItemAtPosition(this.spProjeto.getSelectedItemPosition()).toString());
                 //REQUEST VOLLEY AQUI !!!!!!!
                 jsonObjectReq = new JsonObjectRequest(
                         Request.Method.POST,
@@ -149,8 +153,9 @@ public class CadUsuarioFragment extends Fragment implements View.OnClickListener
 //limpar campos da tela
                 this.etNome.setText("");
                 this.etSenha.setText("");
-                this.etIdade.setText("");
+                this.etProtocolo.setText("");
                 this.etEmail.setText("");
+                this.spProjeto.setSelection(0);
             }
 //mostrando a mensagem que veio do JSON
             Toast toast = Toast.makeText(context, mensagem, duration);

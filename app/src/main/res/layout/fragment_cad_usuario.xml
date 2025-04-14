@@ -38,12 +38,12 @@
             />
 
             <TextView
-                android:id="@+id/textViewIdade"
+                android:id="@+id/textViewProtocolo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/textviewIdade" />
+                android:text="@string/textviewprotocolo" />
             <EditText
-                android:id="@+id/etIdade"
+                android:id="@+id/etProtocolo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -62,6 +62,18 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_projetos" />
+
+            <Spinner
+                android:id="@+id/spProjeto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/projetos"/>
 
             <Button
                 android:id="@+id/btSalvar"
