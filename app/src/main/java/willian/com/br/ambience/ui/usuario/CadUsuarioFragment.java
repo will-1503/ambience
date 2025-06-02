@@ -119,16 +119,16 @@ public class CadUsuarioFragment extends Fragment implements View.OnClickListener
                 int protocolo = Integer.parseInt(this.etProtocolo.getText().toString());
                 usuario.setProtocolo(protocolo);
                 usuario.setSenha(this.etSenha.getText().toString());
-                usuario.setProjeto(this.spProjeto.getItemAtPosition(this.spProjeto.getSelectedItemPosition()).toString());
+                usuario.setProjeto(this.spProjeto.getSelectedItemPosition());
                 //REQUEST VOLLEY AQUI !!!!!!!
                 jsonObjectReq = new JsonObjectRequest(
                         Request.Method.POST,
-                        "http://10.0.2.2:8080/seg/cadusuario.php",
+                        "http://10.0.2.2/projeto/cadastro.php",
                         usuario.toJsonObject(), this, this);
                 requestQueue.add(jsonObjectReq);
 
-                //mensagem de sucesso
-                Toast.makeText(view.getContext(), "Sucesso", Toast.LENGTH_LONG).show();
+
+
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

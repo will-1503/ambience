@@ -80,19 +80,20 @@ public class ConUsuarioFragment extends Fragment  implements
         this.requestQueue.start();
         //array parâmetro de envio para o serviço
         JSONArray jsonArray = new JSONArray();
-        //objeto com informações de filtro da consulta
-        Usuario usuario = null;
+
         try {
+            //objeto com informações de filtro da consulta
+            Usuario usuario = new Usuario();
             usuario.setProtocolo(0);
             //incluindo objeto no array de envio
             jsonArray.put(usuario.toJsonObject());
             //requisição para o Rest Server SEMPRE POST
             jsonArrayReq = new JsonArrayRequest(Request.Method.POST,
-                    "http://10.0.2.2:8080/seg/conusuario.php",
+                    "http://10.0.2.2/projeto/consulta.php",
                     jsonArray, this, this);
             //mando executar a requisção na fila do sistema
             requestQueue.add(jsonArrayReq);
-            usuario = new Usuario();
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

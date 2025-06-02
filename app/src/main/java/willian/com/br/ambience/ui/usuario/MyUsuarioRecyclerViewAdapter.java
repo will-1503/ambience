@@ -34,7 +34,7 @@ public class MyUsuarioRecyclerViewAdapter extends RecyclerView.Adapter<MyUsuario
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).getNome());
-        holder.mContentView.setText(mValues.get(position).getProjeto());
+        holder.mContentView.setText(mValues.get(position).getEmail());
     }
 
     @Override

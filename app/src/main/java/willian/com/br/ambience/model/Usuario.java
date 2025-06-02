@@ -14,7 +14,7 @@ public class Usuario {
     private String nome;
     private int protocolo;
     private String senha;
-    private String projeto;
+    private int projeto;
 
 
     //CONSTRUTOR - Inicializa os atributos para gerar Objeto Json
@@ -23,16 +23,15 @@ public class Usuario {
         this.setEmail("");
         this.setProtocolo(0);
         this.setSenha("");
-        this.setProjeto("");
+        this.setProjeto(1);
     }
     //CONSTRUTOR - inicializa atributos de um arquivo JSon
     public Usuario (JSONObject jp) {
         try {
-            this.setEmail(jp.getString("email"));
-            this.setNome(jp.getString("nome"));
-            this.setProtocolo(jp.getInt("protocolo"));
-            this.setSenha(jp.getString("senha"));
-            this.setProjeto(jp.getString("projeto"));
+            this.setEmail(jp.getString("idEmail"));
+            this.setNome(jp.getString("idNome"));
+            this.setProtocolo(jp.getInt("idProtocoo"));
+            this.setProjeto(jp.getInt("idProjeto"));
         } catch (Exception e) {
             Log.e("Usuario", Objects.requireNonNull(e.getMessage()));
         }
@@ -42,22 +41,22 @@ public class Usuario {
     public JSONObject toJsonObject() {
         JSONObject json = new JSONObject();
         try {
-            json.put("email", this.email);
-            json.put("nome", this.nome);
-            json.put("protocolo", this.protocolo);
-            json.put("senha", this.senha);
-            json.put("projeto", this.projeto);
+            json.put("idEmail", this.email);
+            json.put("idNome", this.nome);
+            json.put("idProtocoo", this.protocolo);
+            json.put("idSenha", this.senha);
+            json.put("idProjeto", this.projeto);
         } catch (JSONException e) {
             Log.e("Usuario", Objects.requireNonNull(e.getMessage()));
         }
         return json;
     }
 
-    public String getProjeto() {
+    public int getProjeto() {
         return projeto;
     }
 
-    public void setProjeto(String projeto) {
+    public void setProjeto(int projeto) {
         this.projeto = projeto;
     }
 
